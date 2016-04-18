@@ -130,9 +130,14 @@ kui-number {
 	border-radius: 10px;
 }
 
+/*其他用途*/
+/*loading*/
+.loading-gif-image{
+	background:url(../images/loading.gif) #FFF no-repeat;
+	display:inline-block;
+}
 
 /*加载中*/
-
 kui-loading{
 	display:block;
 	position:relative;
@@ -322,6 +327,87 @@ kui-datatable-pager >span >span{
 	padding:0px 2px;
 	color:#C0392B;
 }
+
+
+
+
+
+
+kui-input{
+	display:inline-block;
+	width:300px;
+	background:#FFF;
+	height:72px;
+	position:relative;
+	margin-top:5px;
+}
+
+kui-input *{
+	display:block;
+}
+
+
+kui-input kui-input-title{
+	color:#79787a;
+	position:absolute;
+	left:5px;
+	top:18px;
+	line-height:25px;
+	transition:all 0.2s;
+}
+kui-input[texting] kui-input-title,
+kui-input[editing] kui-input-title{
+	font-size:14px;
+	top:0px;
+	color:#3d55bc;
+	line-height:15px;
+}
+kui-input:not([editing])[erroring] kui-input-title{
+	color:#e95236;
+}
+
+kui-input[required] kui-input-title::after{
+	content:'*';
+	margin-left:3px;
+}
+
+kui-input input{
+	height:25px;
+	line-height:25px;
+	position:absolute;
+	top:18px;
+	right:0px;
+	width:inherit;
+	left:0px;
+	outline:none;
+	padding:2px;
+	border:none;
+	border-bottom:solid 1px #777577;
+	background:transparent;
+	font-size:14px;
+}
+
+kui-input input:focus{
+	border-bottom:solid 2px #3d55bc;
+}
+kui-input:not([editing])[erroring] input{
+	border-bottom:solid 1px #e95236;
+}
+
+kui-input-example{
+	position:absolute;
+	left:5px;
+	top:55px;
+	font-size:11px;
+	color:#8b8a8b;
+	opacity:0;
+	transition:all .2s;
+}
+
+kui-input[editing] kui-input-example{
+	opacity:1;
+}
+
 
 
 

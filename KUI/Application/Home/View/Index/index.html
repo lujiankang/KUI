@@ -129,11 +129,47 @@
 	<kui-loading dots="4" dotstyle="background:#8E44AD" style="display:none"></kui-loading>
 
 
+	<!--
+		弹窗
+	-->
+	<div style="display:block">
+		<button id="alertTest" class="btn-success">alert</button>
+		<button id="alertExTest" class="btn-success">alertEx</button>
+		<button id="confirmTest" class="btn-success">confirm</button>
+		<button id="confirmExTest" class="btn-success">confirmEx</button>
+		<button id="popTipTest" class="btn-success">tip</button>
+		<button id="kCheckTest" class="btn-success">kCheck</button>
+		<button id="kRadioTest" class="btn-success">kRadio</button>
+		<button id="loadingTest" class="btn-success">loading</button>
+	</div>
+	
 
-	<div></div>
 
 
+	<div style="display:inline-block; vertical-align:top; width:520px; padding:20px">
 
+		<kui-input ktitle="姓名" example="陆建康" required>
+			<kui-input-title>账号</kui-input-title>
+			<input contenteditable="true" onfocus="kinput.onfocus.call(this)" onblur="kinput.onblur.call(this)" />
+			<kui-input-example>如：114090102037</kui-input-example>
+		</kui-input>
+
+		<kui-input ktitle="姓名" example="陆建康" required>
+			<kui-input-title>密码</kui-input-title>
+			<input type="password" contenteditable="true" onfocus="kinput.onfocus.call(this)" onblur="kinput.onblur.call(this)" />
+			<kui-input-example></kui-input-example>
+		</kui-input>
+
+		<kui-input ktitle="姓名" example="陆建康" type="email" required>
+			<kui-input-title>邮箱</kui-input-title>
+			<input contenteditable="true" onfocus="kinput.onfocus.call(this)" onblur="kinput.onblur.call(this)" />
+			<kui-input-example>如：123456789@gmail.com</kui-input-example>
+		</kui-input>
+
+	</div>
+
+
+	
 </body>
 </html>
 
@@ -150,5 +186,45 @@
 	}
 
 
+	alertTest.onclick = function () {
+		popover.alert("这是一个alert", "我知道");
+	}
+	alertExTest.onclick = function () {
+		popover.alertEx("说明", "这是一个alert", "我知道").onok(function () {
+			alert("你点击了确定");
+		});
+	}
+	confirmTest.onclick = function () {
+		popover.confirm("是否删除“小明”?", "删除", "不要删除").onok(function () {
+			alert("你点击了删除");
+		}).oncancel(function () {
+			alert("你点击了不删除");
+		});
+	}
+	confirmExTest.onclick = function () {
+		popover.confirmEx("警告", "是否删除“小明”?", "删除", "不要删除");
+	}
+
+	popTipTest.onclick = function () {
+		popover.tip("你好，世界", "#F00");
+	}
+
+	kCheckTest.onclick = function () {
+		popover.kcheck("请选择爱好", [{ id: 1, name: "吃饭" }, { id: 2, name: "睡觉" }, { id: 3, name: "抽烟" }]).onok(function (data) {
+			alert("数据为：" + data);
+		});
+	}
+	kRadioTest.onclick = function () {
+		popover.kradio("你的性别是", [{ id: 1, name: "我是男的" }, { id: 2, name: "我是女的" }, { id: 3, name: "我是男的还是女的？" }]).onok(function (data) {
+			alert("数据为：" + data);
+		});
+	}
+
+	loadingTest.onclick = function () {
+		var loading = popover.loading("3秒后消失。。。");
+		setTimeout(function () {
+			loading.distroy();
+		}, 3000)
+	}
 
 </script>

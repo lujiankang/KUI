@@ -373,6 +373,7 @@
     <Folder Include="Public\kui\js\" />
     <Folder Include="Public\kui\js\list\" />
     <Folder Include="Public\kui\js\table\" />
+    <Folder Include="Public\kui\js\window\" />
     <Folder Include="Public\kui\style\" />
     <Folder Include="ThinkPHP\" />
     <Folder Include="ThinkPHP\Common\" />
@@ -461,6 +462,8 @@
     <Content Include="Public\kui\images\timeline-line.png" />
     <Content Include="Public\kui\js\list\timeline.js" />
     <Content Include="Public\kui\js\table\datatable.js" />
+    <Content Include="Public\kui\js\window\loading.js" />
+    <Content Include="Public\kui\js\window\popover.js" />
     <Content Include="Public\kui\style\kui.css" />
     <Content Include="Public\kui\k360-module.js" />
     <Content Include="Public\kui\kui.js" />
